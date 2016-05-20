@@ -1,0 +1,14 @@
+.inputWrapper {
+    padding: 5px 0;
+}
+.inputWrapper:last-of-type {
+    padding-bottom: 20px;
+}
+.formLabel {
+    display: block;
+    padding: 0 0 5px;
+}
+.formInput {
+    padding: 5px;
+    width: 300px;
+}
