@@ -4,16 +4,29 @@ import styles from './Post.css'
 export default class Post extends Component {
   render() {
     return (
+     <div class="postWrap"> 
       <div className="postContainer">
         <Voting
           id={ this.props.postId }
           votes={ this.props.votes }
           upVote={ this.props.upVote }
           downVote={ this.props.downVote } />
-        <PostText text={ this.props.text }
+        <PostText text={this.props.text}
+                  id={ this.props.postId }
                   author = { this.props.author }
-                  time = { this.props.time }
-                  commentCount = { this.props.commentCount } />
+                  time = {this.props.time}
+                  commentCount = { this.props.commentCount } >
+          {this.props.children}
+        </PostText>   
+      </div> 
+        {(() => {
+          if(this.props.children != false)
+            return(
+              <PostDetails>
+                {this.props.children}
+              </PostDetails>
+            )
+          })()}     
       </div>
     )
   }
@@ -24,9 +37,20 @@ class PostText extends Component {
     return (
       <div className="postText">
       <div className="mainText">
-        <a href="#" className="postLink">
-          {this.props.text}
-        </a>
+       {(() => {
+        if(this.props.children != false)
+          return(
+            <h1 className="postTitle">
+              {this.props.text}
+            </h1>)
+        else
+          return(
+            <a href={"/post?postId=" + this.props.id} className="postLink">
+              {this.props.text}
+            </a>
+          )
+      })()}
+        
       </div>
         <div className="postDetails">
           {"submitted on " + this.props.time + " ago by " + this.props.author + " to /i/general"}
@@ -55,6 +79,16 @@ class Voting extends Component {
           <i className="fa fa-angle-down fa-lg">
           </i>
         </div>
+      </div>
+    )
+  }
+}
+
+class PostDetails extends Component {
+  render() {
+    return (
+      <div className="postData">
+        {this.props.children}
       </div>
     )
   }

@@ -10,9 +10,9 @@ export default class Post extends Component {
           votes={ this.props.votes }
           upVote={ this.props.upVote }
           downVote={ this.props.downVote } />
-        <PostText text={ this.props.text }
+        <PostText text={this.props.text}
                   author = { this.props.author }
-                  time = { this.props.time }
+                  time = {this.props.time}
                   commentCount = { this.props.commentCount } />
       </div>
     )
