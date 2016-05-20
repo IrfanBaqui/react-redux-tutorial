@@ -1,0 +1,91 @@
+.postContainer {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding: 20px 0;
+}
+
+.postLink {
+    text-decoration: none;
+}
+.postTitle{
+    font-size: 24px;
+    margin: 0;
+    padding: 0;
+}
+.postDetails {
+    font-family: OpenSans;
+    font-size: 13px;
+    color: #99999A;
+    line-height: 18px;
+    margin: 0 1%;
+    margin-top: 5px;
+    line-height: 1.4em;
+    /*position: absolute;*/
+}
+.postData {
+    display: block;
+    width: 100%;
+    font-family: OpenSans;
+    padding: 20px;
+    box-sizing: border-box;
+}
+.voting {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 80px;
+    border-right: 0.5px solid #979797;
+}
+
+.downvote {
+    opacity: 0.5;
+    color: #646469;
+    font-size: 35px;
+    cursor: pointer;
+}
+
+.upvote {
+    opacity: 0.5;
+    color: #00A0DF;
+    font-size: 35px;
+    cursor: pointer;
+}
+
+.postText {
+    background: #FFFFFF;
+    width: 100%;
+    min-height: 70px;
+    margin-left: 20px;
+}
+
+.postText .mainText {
+    font-family: OpenSans;
+    font-size: 18px;
+    color: #414042;
+    margin: 0 1%;
+}
+
+.postText .commentsText {
+    font-family: OpenSans;
+    font-size: 13.38px;
+    color: #00607C;
+    line-height: 18px;
+    margin: 0 1%;
+    margin-top: 2px;
+    /*position: absolute;*/
+}
+
+.voteCount {
+    font-family: Helvetica;
+    font-size: 20px;
+    color: #000000;
+}
+
+.upvote:hover, .downvote:hover {
+    opacity: 1;
+}
+
+.upvote:active, .downvote:active {
+    font-size: 38px;
+}
