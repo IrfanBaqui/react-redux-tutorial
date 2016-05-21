@@ -11,6 +11,7 @@ export default class PostDetails extends Component {
        <div className="postDetailsContainer" id="postDetailsContainer">
         {
           <Post key={post.postId}
+                postId={post.postId}
                 upVote = { this.props.upVote }
                 downVote = { this.props.downVote }
                 text={post.title} 
