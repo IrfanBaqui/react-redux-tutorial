@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
-import styles from './Post.css'    
+import { browserHistory } from 'react-router'
+import styles from './Post.css'
 
 export default class Post extends Component {
   render() {
     return (
-     <div class="postWrap"> 
+     <div className="postWrap">
       <div className="postContainer">
         <Voting
           id={ this.props.postId }
@@ -33,6 +34,12 @@ export default class Post extends Component {
 }
 
 class PostText extends Component {
+
+  handleClick(e) {
+    e.preventDefault()
+    browserHistory.push(e.target.getAttribute('href'))
+  }
+
   render() {
     return (
       <div className="postText">
@@ -45,7 +52,7 @@ class PostText extends Component {
             </h1>)
         else
           return(
-            <a href={"/post?postId=" + this.props.id} className="postLink">
+            <a href={"/post?postId=" + this.props.id} className="postLink" onClick={this.handleClick.bind(this)}>
               {this.props.text}
             </a>
           )
