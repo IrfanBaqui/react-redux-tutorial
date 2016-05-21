@@ -10,13 +10,8 @@ const store = createStore(PostReducer)
 
 const App = (
   <Provider store={store}>
-<<<<<<< HEAD
-    <HomeWrap />
+    <Home />
   </Provider>
 )
 
-ReactDOM.render(App, document.getElementById('main'))
-=======
-    <Home />
-  </Provider>, document.getElementById('main'))
->>>>>>> 1b8a2d3d142eb39f4cac113ddf71eb8f1bb7aba2
+ReactDOM.render(<App />, document.getElementById('main'))
