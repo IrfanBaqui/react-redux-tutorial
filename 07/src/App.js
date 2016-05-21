@@ -1,30 +1,24 @@
 import ReactDOM from 'react-dom'
 import React, { Component } from 'react'
-import { createStore } from 'redux'
+import { createStore, compose } from 'redux'
 import { Provider } from 'react-redux'
 import { PostReducer } from './reducers'
-import { browserHistory, Route, Router } from 'react-router'
-import { Home } from './Components'
+import { browserHistory, Route, Router, IndexRoute } from 'react-router'
+import { Root, Home } from './Components'
 import { PostContainer, PostDetailsContainer } from './Containers'
+import defaultState from './data/posts.js'
 
-const store = createStore(PostReducer)
-
-class Post extends Component {
-  render() {
-    return (
-      <div className="User">
-        <h1>User id: {this.props.location.query.postId}</h1>
-      </div>
-    )
-  }
-}
+const enhancers = compose(
+  window.devToolsExtension ? window.devToolsExtension() : f => f
+)
+const store = createStore(PostReducer, defaultState, enhancers)
 
 ReactDOM.render(
   <Provider store={store}>
-    {(
-	<Router history={browserHistory}>
-	    <Route path="/" component={Home} />
-	    <Route path="/post" component={PostDetailsContainer} />
-	</Router>
- )}
+    <Router history={browserHistory}>
+      <Route path="/" component={Root}>
+        <IndexRoute component={Home} />
+        <Route path="/post/:postId" component={PostDetailsContainer} />
+      </Route>
+    </Router>
   </Provider>, document.getElementById('main'))
