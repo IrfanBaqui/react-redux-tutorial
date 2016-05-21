@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { browserHistory } from 'react-router'
+import { browserHistory, Link } from 'react-router'
 import styles from './Post.css'
 
 export default class Post extends Component {
@@ -35,11 +35,6 @@ export default class Post extends Component {
 
 class PostText extends Component {
 
-  handleClick(e) {
-    e.preventDefault()
-    browserHistory.push(e.target.getAttribute('href'))
-  }
-
   render() {
     return (
       <div className="postText">
@@ -52,9 +47,9 @@ class PostText extends Component {
             </h1>)
         else
           return(
-            <a href={"/post?postId=" + this.props.id} className="postLink" onClick={this.handleClick.bind(this)}>
+            <Link to={'/post/' + this.props.id} className="postLink">
               {this.props.text}
-            </a>
+            </Link>
           )
       })()}
         

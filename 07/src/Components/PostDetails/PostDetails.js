@@ -5,7 +5,7 @@ import { browserHistory } from 'react-router'
 
 export default class PostDetails extends Component {   
  render() {
-    var post = this.props.posts[this.props.location.query.postId]
+    var post = this.props.posts[this.props.params.postId]
 
     return (
        <div className="postDetailsContainer" id="postDetailsContainer">

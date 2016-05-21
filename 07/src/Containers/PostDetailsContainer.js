@@ -4,7 +4,7 @@ import { PostDetails } from '../Components'
 
 function mapStateToProps(state) {
   return {
-    posts: state,
+    posts: state
   }
 }
 
