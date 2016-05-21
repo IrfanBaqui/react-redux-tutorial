@@ -14,7 +14,7 @@ export function downVote (postId) {
   }
 }
 
-export function addPost (title, detials, time, author) {
+export function addPost (title, details, time, author) {
   var POST_ID = uuid.v4()
   return {
     type: 'ADD_POST',

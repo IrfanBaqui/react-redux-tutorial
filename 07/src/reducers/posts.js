@@ -4,6 +4,7 @@ import * as _ from 'lodash'
 export default function posts (state = postData, action = null) {
   switch (action.type) {
     case 'UPVOTE' : {
+      console.log(state)
       var result = _.cloneDeep(state)
       var post = result[action.postId]
       var votes = parseInt(post.votes)
@@ -19,6 +20,7 @@ export default function posts (state = postData, action = null) {
     }
     case 'ADD_POST' : {
       var result = _.cloneDeep(state)
+      console.log(state);
       result[action.post.postId] = action.post
       return result
     }

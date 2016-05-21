@@ -4,7 +4,7 @@ import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 import { PostReducer } from './reducers'
 import { browserHistory, Route, Router } from 'react-router'
-import { HomeWrap } from './Components'
+import { Home } from './Components'
 import { PostContainer, PostDetailsContainer } from './Containers'
 
 const store = createStore(PostReducer)
@@ -23,7 +23,7 @@ ReactDOM.render(
   <Provider store={store}>
     {(
 	<Router history={browserHistory}>
-	    <Route path="/" component={HomeWrap} />
+	    <Route path="/" component={Home} />
 	    <Route path="/post" component={PostDetailsContainer} />
 	</Router>
  )}
