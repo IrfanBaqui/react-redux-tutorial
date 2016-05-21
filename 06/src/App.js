@@ -1,6 +1,6 @@
 import ReactDOM from 'react-dom'
 import React from 'react'
-import { HomeWrap } from './Components'
+import { Home } from './Components'
 import { PostContainer } from './Containers'
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
@@ -10,5 +10,5 @@ const store = createStore(PostReducer)
 
 ReactDOM.render(
   <Provider store={store}>
-    <HomeWrap />
+    <Home />
   </Provider>, document.getElementById('main'))

@@ -4,10 +4,10 @@ import { Button } from '../../Components'
 import { NewPostContainer } from '../../Containers'
 
 export default class Ctrls extends Component {
-    
+
   createNewPost(){
       document.getElementById("modal-createPost").style.display = "block";
-  }     
+  }
 
   render() {
     return (
