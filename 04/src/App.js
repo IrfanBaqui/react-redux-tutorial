@@ -3,4 +3,4 @@ import React from 'react'
 import { PostList } from './Components'
 import postData from './data/posts.js'
 
-ReactDOM.render(<PostList posts = { postData } />, document.getElementById('main'))
+ReactDOM.render(<PostList posts={postData} />, document.getElementById('main'))

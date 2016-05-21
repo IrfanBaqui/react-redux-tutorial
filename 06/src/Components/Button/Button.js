@@ -3,8 +3,10 @@ import styles from './Button.css'
 
 export default class Button extends Component {
   render() {
+    const className = this.props.classes || ''
+    const classes = 'button ' + className
     return (
-      <button className={'button ' + (this.props.classes || '')} id={this.props.id}  onClick={this.props.onClick}>
+      <button className={classes} id={this.props.id} onClick={this.props.onClick}>
         {this.props.text}
       </button>
     )

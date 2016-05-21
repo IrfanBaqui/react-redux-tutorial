@@ -1,19 +1,21 @@
 import React, { Component } from 'react'
-import styles from './Post.css'    
+import styles from './Post.css'
 
 export default class Post extends Component {
   render() {
     return (
       <div className="postContainer">
         <Voting
-          id={ this.props.postId }
-          votes={ this.props.votes }
-          upVote={ this.props.upVote }
-          downVote={ this.props.downVote } />
-        <PostText text={this.props.text}
-                  author = { this.props.author }
-                  time = {this.props.time}
-                  commentCount = { this.props.commentCount } />
+          id={this.props.postId}
+          votes={this.props.votes}
+          upVote={this.props.upVote}
+          downVote={this.props.downVote} />
+        <PostText
+          text={this.props.text}
+          author={this.props.author}
+          time={this.props.time}
+          commentCount={this.props.commentCount}
+        />
       </div>
     )
   }
@@ -40,20 +42,28 @@ class PostText extends Component {
 }
 
 class Voting extends Component {
-
+  constructor (props) {
+    super(props)
+    this.handleUpVote = this.handleUpVote.bind(this)
+    this.handleDownVote = this.handleDownVote.bind(this)
+  }
+  handleUpVote() {
+    this.props.upVote(this.props.id)
+  }
+  handleDownVote() {
+    this.props.downVote(this.props.id)
+  }
   render() {
     return (
       <div className="voting">
-        <div className="upvote" onClick= { () => { this.props.upVote(this.props.id) } }>
-          <i className="fa fa-angle-up fa-lg">
-          </i>
+        <div className="upvote" onClick={this.handleUpVote}>
+          <i className="fa fa-angle-up fa-lg"></i>
         </div>
         <div className="voteCount">
           {this.props.votes}
         </div>
-        <div className="downvote" onClick= { () => { this.props.downVote(this.props.id) } }>
-          <i className="fa fa-angle-down fa-lg">
-          </i>
+        <div className="downvote" onClick={this.handleDownVote}>
+          <i className="fa fa-angle-down fa-lg"></i>
         </div>
       </div>
     )

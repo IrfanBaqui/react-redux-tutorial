@@ -1,16 +1,16 @@
 import React, { Component } from 'react'
-import styles from './Post.css'    
+import styles from './Post.css'
 
 export default class Post extends Component {
   render() {
     return (
-      <div className="postContainer"
-           id={this.props.dataId}>
+      <div className="postContainer" id={this.props.dataId}>
         <Voting votes={this.props.votes} />
-        <PostText text={this.props.text}
-                  author = { this.props.author }
-                  commentCount = { this.props.commentCount }
-          />
+        <PostText
+          text={this.props.text}
+          author={this.props.author}
+          commentCount={this.props.commentCount}
+        />
       </div>
     )
   }
@@ -41,15 +41,13 @@ class Voting extends Component {
     return (
       <div className="voting">
         <div className="upvote">
-          <i className="fa fa-angle-up fa-lg">
-          </i>
+          <i className="fa fa-angle-up fa-lg"></i>
         </div>
         <div className="voteCount">
           {this.props.votes}
         </div>
         <div className="downvote">
-          <i className="fa fa-angle-down fa-lg">
-          </i>
+          <i className="fa fa-angle-down fa-lg"></i>
         </div>
       </div>
     )

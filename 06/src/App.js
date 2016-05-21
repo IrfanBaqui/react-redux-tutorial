@@ -8,7 +8,10 @@ import { PostReducer } from './reducers'
 
 const store = createStore(PostReducer)
 
-ReactDOM.render(
+const App = (
   <Provider store={store}>
     <HomeWrap />
-  </Provider>, document.getElementById('main'))
+  </Provider>
+)
+
+ReactDOM.render(App, document.getElementById('main'))

@@ -87,5 +87,5 @@
 }
 
 .upvote:active, .downvote:active {
-    font-size: 38px;
+    color: #000;
 }
