@@ -4,7 +4,7 @@
   "description": "A step by step tutorial for react",
   "main": "index.js",
   "scripts": {
-    "build-dev": "webpack --config webpack.development.config.js",
+    "build-dev": "webpack --config webpack.development.config.js"
   },
   "author": "Irfan Baqui",
   "license": "MIT",
