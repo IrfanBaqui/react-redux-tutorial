@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import styles from './Post.css'
 
+/* export Post Component as default */
 export default class Post extends Component {
   render() {
     return (
