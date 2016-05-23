@@ -1,13 +1,12 @@
+var path = require('path')
+var Express = require('express')
+var app = new Express()
+var port = 9000
+/* do webpack stuff */
 var webpack = require('webpack')
 var webpackDevMiddleware = require('webpack-dev-middleware')
 var webpackHotMiddleware = require('webpack-hot-middleware')
 var config = require('./webpack.development.config')
-var path = require('path')
-var Express = require('express')
-
-var app = new Express()
-var port = 9000
-
 var compiler = webpack(config)
 app.use(webpackDevMiddleware(compiler, {
   noInfo: true,
@@ -15,7 +14,9 @@ app.use(webpackDevMiddleware(compiler, {
   historyApiFallback: true
 }))
 app.use(webpackHotMiddleware(compiler))
+/* end do webpack stuff */
 
+/* Normal express route serving index.html file */
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, '/index.html'))
 })
