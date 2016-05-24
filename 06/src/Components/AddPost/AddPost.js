@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import { FormInput, Button } from '../../Components'
+import FormInput from '../../Components/FormInput/FormInput'
+import Button from '../../Components/Button/Button'
 import styles from './AddPost.css'
 
 export default class AddPost extends Component {

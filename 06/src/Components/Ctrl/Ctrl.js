@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import styles from './Ctrl.css'
-import { Button } from '../../Components'
-import { NewPostContainer } from '../../Containers'
+import Button from '../../Components/Button/Button'
+import NewPostContainer from '../../Containers/NewPostContainer'
 
 export default class Ctrls extends Component {
   constructor (props) {

@@ -1,2 +1,2 @@
-export { default as PostContainer } from './PostContainer'
-export { default as NewPostContainer } from './NewPostContainer'
+export PostContainer from './PostContainer'
+export NewPostContainer from './NewPostContainer'
