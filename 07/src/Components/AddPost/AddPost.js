@@ -1,15 +1,16 @@
 import React, { Component } from 'react'
-import { FormInput, Button } from '../../Components'
+import Button from '../Button/Button'
+import FormInput from '../FormInput/FormInput'
 import styles from './AddPost.css'
-  
-export default class AddPost extends Component {  
+
+export default class AddPost extends Component {
  closeModal(event){
       event.target.parentElement.parentElement.style.display = "none";
   }
-  
+
   render() {
     return (
-      <div className="modalWrap" id="modal-createPost">   
+      <div className="modalWrap" id="modal-createPost">
         <div className="newPostWrapper">
            <i className="fa fa-times fa-lg close-modal" onClick={this.closeModal.bind(this)}>
               </i>

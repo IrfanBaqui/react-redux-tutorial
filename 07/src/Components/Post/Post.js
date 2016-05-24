@@ -12,14 +12,16 @@ export default class Post extends Component {
           votes={ this.props.votes }
           upVote={ this.props.upVote }
           downVote={ this.props.downVote } />
-        <PostText text={this.props.text}
-                  id={ this.props.postId }
-                  author = { this.props.author }
-                  time = {this.props.time}
-                  commentCount = { this.props.commentCount } >
+        <PostText
+          text={this.props.text}
+          id={ this.props.postId }
+          author = { this.props.author }
+          time = {this.props.time}
+          commentCount = { this.props.commentCount }
+        >
           {this.props.children}
-        </PostText>   
-      </div> 
+        </PostText>
+      </div>
         {(() => {
           if(this.props.children != false)
             return(
@@ -27,7 +29,7 @@ export default class Post extends Component {
                 {this.props.children}
               </PostDetails>
             )
-          })()}     
+          })()}
       </div>
     )
   }
@@ -52,7 +54,7 @@ class PostText extends Component {
             </Link>
           )
       })()}
-        
+
       </div>
         <div className="postDetails">
           {"submitted on " + this.props.time + " ago by " + this.props.author + " to /i/general"}

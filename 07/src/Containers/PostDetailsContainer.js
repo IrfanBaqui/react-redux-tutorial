@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import { upVote, downVote } from '../actions'
-import { PostDetails } from '../Components'
+import PostDetails from '../Components/PostDetails'
 
 function mapStateToProps(state) {
   return {

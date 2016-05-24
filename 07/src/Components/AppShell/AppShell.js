@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
-import { Home } from '../../Containers'
 
-export default class Root extends Component {
+/* App shell is dynamic via React Router */
+export default class AppShell extends Component {
   render() {
     return (
       <div className="homeContainer">
-        { this.props.children }
+        {this.props.children}
       </div>
     )
   }

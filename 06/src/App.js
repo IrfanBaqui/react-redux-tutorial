@@ -1,7 +1,7 @@
 import ReactDOM from 'react-dom'
 import React from 'react'
 import Home from './Components/Home'
-import PostContainer from './Containers'
+import PostContainer from './Containers/PostContainer'
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 import { PostReducer } from './reducers'

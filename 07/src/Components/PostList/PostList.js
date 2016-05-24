@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import styles from './PostList.css'
-import { Post } from '../../Components'
+import Post from '../Post'
 import * as _ from 'lodash'
 
 export default class PostList extends Component {

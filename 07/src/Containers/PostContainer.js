@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import { upVote, downVote } from '../actions'
-import { PostList } from '../Components'
+import PostList from '../Components/PostList'
 
 function mapStateToProps(state) {
   return {
