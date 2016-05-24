@@ -14,4 +14,4 @@ const App = (
   </Provider>
 )
 
-ReactDOM.render(<App />, document.getElementById('main'))
+ReactDOM.render(App, document.getElementById('main'))
