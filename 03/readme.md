@@ -1,4 +1,4 @@
-## 03
+# 03
 Composing components in introducing prop types
 
 # Links
