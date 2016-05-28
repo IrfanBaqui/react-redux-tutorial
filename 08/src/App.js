@@ -15,17 +15,14 @@ const enhancers = compose(
 )
 
 const initialState = window.__INITIAL_STATE__
-
 const store = createStore(PostReducer, initialState, enhancers)
-console.log(document.getElementById('main'))
+
 ReactDOM.render(
   <Provider store={store}>
     <Router history={browserHistory}>
-      <Route path="/" component={Home}>
+      <Route path="/" component={AppShell}>
         <IndexRoute component={Home} />
         <Route path="/post/:postId" component={PostDetailsContainer} />
       </Route>
     </Router>
   </Provider>, document.getElementById('main'))
-
-  console.log(document.getElementById('main'))
