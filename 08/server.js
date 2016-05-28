@@ -2,9 +2,9 @@ require('babel-core/register')({
   presets: ['es2015', 'react']
 });
 
-require.extensions['.css'] = () => {
-  return;
-};
+//require.extensions['.css'] = () => {
+//  return;
+//};
 
 var webpack = require('webpack')
 var webpackDevMiddleware = require('webpack-dev-middleware')
@@ -25,6 +25,7 @@ app.use(webpackDevMiddleware(compiler, {
   historyApiFallback: true
 }))
 app.use(webpackHotMiddleware(compiler))
+delete process.env.BROWSER;
 
 app.use(handleRender);
 

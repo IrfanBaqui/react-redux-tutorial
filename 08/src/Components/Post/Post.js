@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router'
-import styles from './Post.css'
+if (process.env.BROWSER) {
+  var styles = require('./Post.css')
+}
 
 export default class Post extends Component {
   render() {

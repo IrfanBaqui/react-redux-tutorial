@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
-import styles from './PostList.css'
-import Post from '../Post'
 import * as _ from 'lodash'
+if (process.env.BROWSER) {
+  var styles = require('./PostList.css')
+}
+import Post from '../Post'
 
 export default class PostList extends Component {
   constructor() {

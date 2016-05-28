@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
-import styles from './Ctrl.css'
+if (process.env.BROWSER) {
+  var styles = require('./Ctrl.css')
+}
 import Button from '../Button'
 import NewPostContainer from '../../Containers/NewPostContainer'
 

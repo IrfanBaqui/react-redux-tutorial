@@ -1,5 +1,6 @@
 var path = require('path')
 var webpack = require('webpack')
+var ExtractTextPlugin = require("extract-text-webpack-plugin")
 
 var config = {
 
@@ -23,7 +24,13 @@ var config = {
 
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin()
+    new webpack.NoErrorsPlugin(),
+    new webpack.DefinePlugin({
+      "process.env": {
+        BROWSER: JSON.stringify(true)
+      }
+    }),
+    new ExtractTextPlugin("[name].css")
   ],
 
   module: {
@@ -35,7 +42,7 @@ var config = {
       },
       {
         test: /\.css$/,
-        loaders: ['style-loader','css-loader']
+        loader: ExtractTextPlugin.extract('style-loader','css-loader')
       }
     ]
   }

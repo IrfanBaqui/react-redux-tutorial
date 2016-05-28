@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
-import styles from './PostDetails.css'
+if (process.env.BROWSER) {
+  var styles = require('./PostDetails.css')
+}
 import Post from '../Post'
 import { browserHistory } from 'react-router'
 

@@ -29,6 +29,7 @@ function renderFullPage(html,initialState){
 			<head>
 			    <title>Intreddit</title>
 			    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+			    <link rel="stylesheet" href="dist/main.css">
 			</head>
 		<body>
 			<div id="main">${html}</div>

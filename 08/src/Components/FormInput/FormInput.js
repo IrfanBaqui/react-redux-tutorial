@@ -1,5 +1,7 @@
 import React, { Component, PropTypes } from 'react'
-import styles from './FormInput.css'
+if (process.env.BROWSER) {
+  var styles = require('./FormInput.css')
+}
 
 export default class FormInput extends Component {
   render() {

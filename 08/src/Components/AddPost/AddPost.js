@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 import Button from '../Button/Button'
 import FormInput from '../FormInput/FormInput'
-import styles from './AddPost.css'
+if (process.env.BROWSER) {
+  var styles = require('./AddPost.css')
+}
 
 export default class AddPost extends Component {
  closeModal(event){

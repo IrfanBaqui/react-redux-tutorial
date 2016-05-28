@@ -1,5 +1,7 @@
 import React, { Component, PropTypes } from 'react'
-import styles from './Button.css'
+if (process.env.BROWSER) {
+  var styles = require('./Button.css')
+}
 
 export default class Button extends Component {
   render() {
