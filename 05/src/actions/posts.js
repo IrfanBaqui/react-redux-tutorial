@@ -8,6 +8,6 @@ export function upVote (postId) {
 export function downVote (postId) {
   return {
     type: 'DOWNVOTE',
-    postId
+    postId: postId
   }
 }

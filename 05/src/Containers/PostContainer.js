@@ -4,11 +4,11 @@ import { PostList } from '../Components'
 
 function mapStateToProps(state) {
   return {
-    posts: state,
+    posts: state
   }
 }
 
-function mapDispatchToProps(dispatch) {
+function mapActionsToProps(dispatch) {
   return {
     upVote: (postId) => {
       dispatch(upVote(postId))
@@ -19,4 +19,4 @@ function mapDispatchToProps(dispatch) {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(PostList)
+export default connect(mapStateToProps, mapActionsToProps)(PostList)

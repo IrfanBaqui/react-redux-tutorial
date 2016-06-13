@@ -1,7 +1,6 @@
-import postData from '../data/posts.js'
 import * as _ from 'lodash'
 
-export default function posts (state = postData, action = null) {
+export default function posts (state, action = null) {
   switch (action.type) {
     case 'UPVOTE' : {
       var result = _.cloneDeep(state)

@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:IrfanBaqui/intreddit.git"
+    "url": "git+ssh://git@github.com/IrfanBaqui/intreddit.git"
   },
   "author": "Irfan Baqui",
   "license": "ISC",
@@ -39,5 +39,10 @@
     "webpack": "^1.12.14",
     "webpack-dev-middleware": "^1.6.1",
     "webpack-hot-middleware": "^2.10.0"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/IrfanBaqui/intreddit/issues"
+  },
+  "homepage": "https://github.com/IrfanBaqui/intreddit#readme",
+  "keywords": []
 }

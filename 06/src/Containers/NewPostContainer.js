@@ -19,7 +19,7 @@ function mapDispatchToProps(dispatch) {
       var title = document.getElementById("title")
       var details = document.getElementById("details")
       var time = Date()
-      dispatch(addPost(title.value,details.value,time,"Anonymous"))
+      dispatch(addPost(title.value,details.value,time,"Irfan Baqui"))
 
       title.value=""
       details.value=""
