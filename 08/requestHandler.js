@@ -22,9 +22,14 @@ function handleRender(req,res){
     </Router>
     )
 
-  match({ routes, location: req.url }, (error, redirectLocation, renderProps) => {
+  const routesMap = {
+    routes,
+    location: req.url
+  }
+
+  match(routesMap, function(error, redirectLocation, renderProps) {
     if (error) {
-      res.status(500).send(error.message)
+      res.status(500).send("Could not fulfill this request. Please try again later.")
     } else if (redirectLocation) {
       res.redirect(302, redirectLocation.pathname + redirectLocation.search)
     } else if (renderProps) {

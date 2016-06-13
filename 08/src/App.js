@@ -4,11 +4,8 @@ import { createStore, compose } from 'redux'
 import { Provider } from 'react-redux'
 import { PostReducer } from './reducers'
 import { browserHistory, Route, Router, IndexRoute } from 'react-router'
-import Home from './Components/Home'
-import AppShell from './Components/AppShell'
-import PostDetailsContainer from './Containers/PostDetailsContainer'
-import PostContainer from './Containers/PostContainer'
-import defaultState from './data/posts.js'
+import { Home, AppShell } from './Components'
+import { PostDetailsContainer } from './Containers'
 
 const enhancers = compose(
   window.devToolsExtension ? window.devToolsExtension() : f => f
