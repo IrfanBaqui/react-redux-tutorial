@@ -3,25 +3,15 @@ import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 import { renderToString } from 'react-dom/server'
 import { PostReducer } from './src/reducers'
-import { browserHistory, Route, Router, IndexRoute } from 'react-router'
-import PostDetailsContainer from './src/Containers/PostDetailsContainer'
-import { Home, AppShell } from './src/Components'
-import defaultState from './src/data/posts.js'
 import { match, RouterContext } from 'react-router'
+import defaultState from './src/data/posts.js'
+import routes from './src/routes'
 
 
 function handleRender(req,res){
   const store = createStore(PostReducer, defaultState)
-  const initialState = store.getState() 
-  const routes = (
-    <Router history={browserHistory}>
-      <Route path="/" component={AppShell}>
-        <IndexRoute component={Home} />
-        <Route path="/post/:postId" component={PostDetailsContainer} />
-      </Route>
-    </Router>
-    )
-
+  const initialState = store.getState()
+  console.log(initialState)
   const routesMap = {
     routes,
     location: req.url

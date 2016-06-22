@@ -1,0 +1,16 @@
+.postDetailsContainer {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: 30px auto;
+    background: #fff;
+    box-shadow: 2px 3px 7px 1px #aaa;
+    position: relative;
+    padding: 20px 10px;
+}
+.close-modal{
+    position: absolute;
+    top:20px;
+    right:20px;
+    cursor: pointer;
+}

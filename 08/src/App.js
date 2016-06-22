@@ -3,9 +3,7 @@ import React, { Component } from 'react'
 import { createStore, compose } from 'redux'
 import { Provider } from 'react-redux'
 import { PostReducer } from './reducers'
-import { browserHistory, Route, Router, IndexRoute } from 'react-router'
-import { Home, AppShell } from './Components'
-import { PostDetailsContainer } from './Containers'
+import routes from './routes'
 
 const enhancers = compose(
   window.devToolsExtension ? window.devToolsExtension() : f => f
@@ -16,10 +14,5 @@ const store = createStore(PostReducer, initialState, enhancers)
 
 ReactDOM.render(
   <Provider store={store}>
-    <Router history={browserHistory}>
-      <Route path="/" component={AppShell}>
-        <IndexRoute component={Home} />
-        <Route path="/post/:postId" component={PostDetailsContainer} />
-      </Route>
-    </Router>
+    {routes}
   </Provider>, document.getElementById('main'))

@@ -1,9 +1,15 @@
+require('babel-core/register')({
+  presets: ['es2015', 'react'],
+});
+
 var webpack = require('webpack')
 var webpackDevMiddleware = require('webpack-dev-middleware')
 var webpackHotMiddleware = require('webpack-hot-middleware')
 var config = require('./webpack.development.config')
 var path = require('path')
 var Express = require('express')
+var requestHandler = require('./requestHandler')
+
 
 var app = new Express()
 var port = 9000
@@ -15,10 +21,13 @@ app.use(webpackDevMiddleware(compiler, {
   historyApiFallback: true
 }))
 app.use(webpackHotMiddleware(compiler))
+delete process.env.BROWSER;
 
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, '/index.html'))
 })
+
+//app.use(requestHandler);
 
 app.listen(port, function (error) {
   if (error) {
