@@ -38,7 +38,7 @@ app.post('/posts/:id', function (req, res) {
       fs.writeFile('./data.txt', data, function() {
       setInterval(function(){
         res.end(postId);
-      },3000);
+      },1000);
     })
     }
   });
@@ -86,12 +86,13 @@ app.post('/post', function (req, res) {
 
     data = JSON.parse(data);
     data['posts'][id] = post;
+    data['posts'][id]['postId'] = id;
     data = JSON.stringify(data);
 
     fs.writeFile('./data.txt', data, function() {
       setInterval(function(){
         res.end(id);
-      },10000);
+      },1000);
     })
   });
 });

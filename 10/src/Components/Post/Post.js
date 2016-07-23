@@ -76,14 +76,14 @@ class Voting extends Component {
   render() {
     return (
       <div className="voting">
-        <div className="upvote" onClick= { () => { this.props.upVote(this.props.id) } }>
+        <div className="upvote" onClick= { () => { this.props.upVote(this.props.id)} }>
           <i className="fa fa-angle-up fa-lg">
           </i>
         </div>
         <div className="voteCount">
           {this.props.votes}
         </div>
-        <div className="downvote" onClick= { () => { this.props.downVote(this.props.id) } }>
+        <div className="downvote" onClick= { () => { this.props.downVote(this.props.id)} }>
           <i className="fa fa-angle-down fa-lg">
           </i>
         </div>

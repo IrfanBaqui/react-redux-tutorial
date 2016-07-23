@@ -58,7 +58,8 @@ export function newPost(postDetails) {
       .then(function (res) {
         var postId = res;
         dispatch(toggleLoading());
-        return dispatch(postCreated(postDetails, postId));
+        postDetails.postId = postId;
+        return dispatch(postCreated(postDetails,postId));
       })
       .catch(function (err) {
         dispatch(toggleLoading());
