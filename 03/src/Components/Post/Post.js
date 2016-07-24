@@ -7,7 +7,7 @@ export default class Post extends Component {
     return (
       <div
         className="postContainer"
-        id={this.props.dataId}>
+        id={this.props.postId}>
         <Voting votes={this.props.votes} />
         <PostText
           text={this.props.text}

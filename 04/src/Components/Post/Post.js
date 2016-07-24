@@ -4,7 +4,7 @@ import styles from './Post.css'
 export default class Post extends Component {
   render() {
     return (
-      <div className="postContainer" id={this.props.dataId}>
+      <div className="postContainer" id={this.props.postId}>
         <Voting votes={this.props.votes} />
         <PostText
           text={this.props.text}
