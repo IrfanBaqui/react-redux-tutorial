@@ -10,7 +10,6 @@ export default class PostList extends Component {
     super()
   }
   render() {
-    console.log(this.props.posts);
     return (
       <div className="postsContainer" id="postsContainer">
         {

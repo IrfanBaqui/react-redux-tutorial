@@ -3,6 +3,7 @@ import { newPost } from '../actions'
 import AddPost from '../Components/AddPost'
 
 function mapStateToProps(state) {
+  console.log('DDDDD ', state);
   return {
     posts: state.posts,
     isLoading: state.appState.isLoading

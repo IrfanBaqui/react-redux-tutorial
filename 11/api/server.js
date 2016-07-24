@@ -19,7 +19,7 @@ app.use(function(req, res, next) {
 app.post('/posts/:id', function (req, res) {
   var postId = String(req.params.id);
   var vote = req.body;
-  fs.readFile('./data.txt', 'utf8', function(err, data) {
+  fs.readFile(__dirname + '/data.txt', 'utf8', function(err, data) {
     if (err) {
       res.statusCode = 500;
       res.send(err);
@@ -35,10 +35,10 @@ app.post('/posts/:id', function (req, res) {
       vote.vote == 'upVote' ? data['posts'][postId]['votes']++ : data['posts'][postId]['votes']--;
 
       data = JSON.stringify(data);
-      fs.writeFile('./data.txt', data, function() {
+      fs.writeFile(__dirname + '/data.txt', data, function() {
       setInterval(function(){
         res.end(postId);
-      },1000);
+      }, 200);
     })
     }
   });
@@ -46,7 +46,7 @@ app.post('/posts/:id', function (req, res) {
 
 app.get('/posts/:id', function (req, res) {
   var postId = String(req.params.id);
-  fs.readFile('./data.txt', 'utf8', function(err, data) {
+  fs.readFile(__dirname + '/data.txt', 'utf8', function(err, data) {
     if (err) {
       res.statusCode = 500;
       res.send(err);
@@ -65,7 +65,7 @@ app.get('/posts/:id', function (req, res) {
 });
 
 app.get('/posts', function (req, res) {
-  fs.readFile('./data.txt', 'utf8', function(err, data) {
+  fs.readFile(__dirname + '/data.txt', 'utf8', function(err, data) {
     if (err) {
       res.statusCode = 500;
       res.send(err);
@@ -78,7 +78,7 @@ app.post('/post', function (req, res) {
   var post = req.body;
   var id = uuid.v4();
 
-  fs.readFile('./data.txt', 'utf8', function(err, data) {
+  fs.readFile(__dirname + '/data.txt', 'utf8', function(err, data) {
     if (err) {
       res.statusCode = 500;
       res.send(err);
@@ -89,10 +89,10 @@ app.post('/post', function (req, res) {
     data['posts'][id]['postId'] = id;
     data = JSON.stringify(data);
 
-    fs.writeFile('./data.txt', data, function() {
+    fs.writeFile(__dirname + '/data.txt', data, function() {
       setInterval(function(){
         res.end(id);
-      },1000);
+      }, 500);
     })
   });
 });

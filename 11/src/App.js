@@ -16,6 +16,7 @@ import defaultState from './data/posts.js'
 
 // Step 13: Use Thunk middleware
 const initialState = window.__INITIAL_STATE__
+console.log(initialState)
 const store = createStore(PostReducer, initialState, applyMiddleware(thunk))
 
 ReactDOM.render(

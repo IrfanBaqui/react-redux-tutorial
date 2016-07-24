@@ -15,7 +15,7 @@ function downVote (postId) {
 }
 
 export function castVote(postId,vote){
-  return function(dispatch){
+  return function(dispatch, getState){
     dispatch(toggleLoading());
 
     return makeRequest('POST','http://localhost:8081/posts/'+postId,JSON.stringify(vote))

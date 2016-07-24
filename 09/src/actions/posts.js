@@ -32,7 +32,7 @@ export function newPost(postDetails) {
   return function(dispatch) {
     dispatch(createPost());
 
-    return makeRequest('POST', 'http://0.0.0.0:8081/post', JSON.stringify(postDetails))
+    return makeRequest('POST', 'http://localhost:8081/post', JSON.stringify(postDetails))
       .then(function (res) {
         var postId = res;
         return dispatch(postCreated(postDetails, postId));

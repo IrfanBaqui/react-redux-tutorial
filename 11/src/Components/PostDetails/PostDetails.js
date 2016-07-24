@@ -26,8 +26,8 @@ export default class PostDetails extends Component {
            {post.details}
           </Post>
         }
-      </div>
-      <div id="modal-loader" className={this.props.isLoading}>
+       </div>
+        <div id="modal-loader" className={this.props.isLoading}>
           LOADING...
         </div>
      </div> 
